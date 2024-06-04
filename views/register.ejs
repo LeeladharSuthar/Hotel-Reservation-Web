@@ -90,7 +90,7 @@
     <div class="form-container">
       <h1>User Registration</h1>
       <form
-        action="http://localhost:3000/api/v1/users/register"
+        action="/api/v1/users/register"
         method="post"
         enctype="multipart/form-data"
       >
@@ -155,7 +155,7 @@
 
         <div class="form-div">
           <input type="submit" value="Register" />
-          <a href="./login.html">Login</a>
+          <a href="/login">Login</a>
         </div>
       </form>
     </div>
@@ -172,7 +172,7 @@
         spanTwo.innerText = "";
         spanThree.innerText = "";
 
-        const url = "http://localhost:3000/api/v1/users/verifyRegister";
+        const url = "/api/v1/users/verifyRegister";
         const method = "POST";
         const data = {
           email: document.getElementById("email").value,

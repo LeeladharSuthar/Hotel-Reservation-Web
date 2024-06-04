@@ -38,7 +38,7 @@
             <a href="/profile">Profile</a>
             <a href="/myReservations">My Reservations</a>
             <a href="/myBookings">My Bookings</a>
-            <a href="http://localhost:3000/api/v1/users/logout">Logout</a>
+            <a href="/api/v1/users/logout">Logout</a>
           </div>
         </div>
         <% } else { %>
@@ -63,7 +63,7 @@
       <div class="right-main">
         <% if(data && data._id) { %>
         <form
-          action="http://localhost:3000/api/v1/restaurant/createRestaurant"
+          action="/api/v1/restaurant/createRestaurant"
           method="post"
         >
           <label for="name" class="name">Full Name:</label>

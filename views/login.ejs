@@ -89,7 +89,7 @@
   <body>
     <div class="login-container">
       <h1>User Login</h1>
-      <form action="http://localhost:3000/api/v1/users/login" method="post">
+      <form action="/api/v1/users/login" method="post">
         <label for="login-email"
           >Email: <span id="400" style="color: red"></span
         ></label>
@@ -128,7 +128,7 @@
         spanOne.innerText = ""
         spanTwo.innerText = ""
 
-        const url = "http://localhost:3000/api/v1/users/verifyLogin";
+        const url = "/api/v1/users/verifyLogin";
         const method = "POST";
         const data = {
           email: document.getElementById("email").value,
