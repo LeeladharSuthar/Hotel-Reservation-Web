@@ -1,12 +1,6 @@
 import { asyncHandler } from "../utils/asyncHandler.js"
 import mongoose from "mongoose"
-import { ApiError } from "../utils/ApiError.js"
-import { User } from "../models/user.model.js"
-import { ApiResponse } from "../utils/ApiResponse.js"
-import jwt from "jsonwebtoken"
 import { Reservation } from "../models/reservation.model.js"
-const { ObjectId } = mongoose.Types;
-
 
 const makeReservation = asyncHandler(async (req, res) => {
     let { name, guests, arrival, departure, room, mail } = req.body
@@ -50,12 +44,4 @@ const makeReservation = asyncHandler(async (req, res) => {
     res.render('index', { data: req.user })
 })
 
-const cancelReservation = asyncHandler(async (req, res) => {
-
-})
-
-const listReservations = asyncHandler(async (req, res) => {
-
-})
-
-export { makeReservation, cancelReservation, listReservations }
+export { makeReservation }
