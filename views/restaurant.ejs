@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurants</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <script
+      src="https://kit.fontawesome.com/26125200c4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/styles/restaurant.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo">Live Aqua Beach Resort</a>
+      <div>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/reservations">Resevations</a></li>
+          <li>
+            <a href="#" style="border-bottom: 2px solid white">Restaurant</a>
+          </li>
+        </ul>
+      </div>
+      <% if (data && data?._id) { %>
+        <!-- <a href="http://localhost:3000/api/v1/users/logout" class="admin" -->
+          <!-- >Logout</a -->
+        <!-- > -->
+        <div class="user-dropdown">
+          <span class="material-symbols-outlined" style="font-size: 24px;">
+            account_circle
+            </span>
+          <div class="dropdown-content">
+            <a href="/profile">Profile</a>
+            <a href="/myReservations">My Reservations</a>
+            <a href="/myBookings">My Bookings</a>
+            <a href="http://localhost:3000/api/v1/users/logout">Logout</a>
+          </div>
+        </div>
+        <% } else { %>
+        <a href="/login" class="admin">Login/Register</a>
+        <% } %>
+    </header>
+    <div class="main">
+      <div class="left-main">
+        <h3>Hidden Garden</h3>
+        <p>Asian | Business Casual</p>
+        <p>
+          &nbsp;&nbsp;&nbsp;As night falls, relax in a warm atmosphere inviting
+          you to discover the delicacies of the East. The experience begins the
+          moment you walk inside the restaurant. The journey is magical. To
+          continue the fascination, our chef will surprise your palate with an
+          avant-garde concept that fuses exquisite Asian flavors. Your evening
+          will be unforgettable within a spectacular and serene garden with all
+          the Caribbean charm.
+        </p>
+      </div>
+
+      <div class="right-main">
+        <% if(data && data._id) { %>
+        <form
+          action="http://localhost:3000/api/v1/restaurant/createRestaurant"
+          method="post"
+        >
+          <label for="name" class="name">Full Name:</label>
+
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required
+            placeholder="Your Full Name"
+          />
+
+          <div class="drop">
+            <label for="course">Main Course</label>
+            <select name="mainCourse" id="course">
+              <option value="#" disabled selected>Choose</option>
+              <option value="steak">Steak</option>
+              <option value="Chicken">Chicken</option>
+              <option value="Fish">Fish</option>
+              <option value="Pasta">Pasta</option>
+            </select>
+          </div>
+          <div class="side-drink">
+            <div class="drop">
+              <label for="side">Side</label>
+              <select name="side" id="side">
+                <option value="#">Choose</option>
+                <option value="Fries">Fries</option>
+                <option value="Salad">Salad</option>
+                <option value="Rice">Rice</option>
+                <option value="Soup">Soup</option>
+              </select>
+            </div>
+            <div class="drop">
+              <label for="drink">Drink</label>
+              <select name="drink" id="drink">
+                <option value="#">Choose</option>
+                <option value="Water">Water</option>
+                <option value="Soda">Soda</option>
+                <option value="Beer">Beer</option>
+                <option value="Lemonade">Lemonade</option>
+              </select>
+            </div>
+          </div>
+          <span id="span" style="color: red"></span>
+          <button type="submit">Place Order</button>
+        </form>
+        <% }else{ %>
+        <form action="/login" method="get">
+          <label for="name" class="name">Full Name:</label>
+
+          <input
+            type="text"
+            name="name"
+            id="name"
+            disabled
+            placeholder="Your Full Name"
+          />
+
+          <div class="drop">
+            <label for="course">Main Course</label>
+            <select name="mainCourse" id="course" disabled>
+              <option value="#" disabled selected>Choose</option>
+              <option value="steak">Steak</option>
+              <option value="Chicken">Chicken</option>
+              <option value="Fish">Fish</option>
+              <option value="Pasta">Pasta</option>
+            </select>
+          </div>
+          <div class="side-drink">
+            <div class="drop">
+              <label for="side">Side</label>
+              <select name="side" id="side" disabled>
+                <option value="#">Choose</option>
+                <option value="Fries">Fries</option>
+                <option value="Salad">Salad</option>
+                <option value="Rice">Rice</option>
+                <option value="Soup">Soup</option>
+              </select>
+            </div>
+            <div class="drop">
+              <label for="drink">Drink</label>
+              <select name="drink" id="drink" disabled>
+                <option value="#">Choose</option>
+                <option value="Water">Water</option>
+                <option value="Soda">Soda</option>
+                <option value="Beer">Beer</option>
+                <option value="Lemonade">Lemonade</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit">Login/Register</button>
+        </form>
+        <% } %>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <h3>Gallery</h3>
+      <div>
+        <div><img src="/assets/gallery-1.jpg" alt="" /></div>
+        <div><img src="/assets/gallery-2.jpg" alt="" /></div>
+        <div><img src="/assets/gallery-3.jpg" alt="" /></div>
+        <div><img src="/assets/gallery-4.jpg" alt="" /></div>
+        <div><img src="/assets/gallery-5.jpg" alt="" /></div>
+        <div><img src="/assets/gallery-6.jpg" alt="" /></div>
+        <div><img src="/assets/gallery-7.jpg" alt="" /></div>
+        <div><img src="/assets/image.png" alt="" /></div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-one">
+        <h3>Live Aqua Beach Resort</h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;Live Aqua Beach Resort is a luxurious hotel located
+          in Cancun, known for its exquisite amenities and stunning oceanfront
+          views. The resort offers an array of facilities, including multiple
+          pools, spa services, fine dining restaurants, and exclusive lounges,
+          ensuring an unforgettable experience for its guests.
+        </p>
+      </div>
+      <div class="footer-two">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/reservations">Reservations</a></li>
+          <li><a href="#">Restaurants</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-three">
+        <h3>Contact</h3>
+        <ul>
+          <li>
+            Blvd. Kukulcan KM. 12.5, Zona Hotelera, 77500 Cancún, Q.R., Mexico
+          </li>
+          <li>info@liveaquacancun.com</li>
+          <li>+52 (998) 123 4567</li>
+        </ul>
+      </div>
+    </footer>
+    <% if(data && data._id){ %>
+    <script>
+      let span = document.querySelector("#span");
+      let inputOne = document.getElementById("course");
+      let inputTwo = document.getElementById("side");
+      let inputThree = document.getElementById("drink");
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        span.innerText = ''
+        if(inputOne.value!='#'||inputTwo.value!='#'||inputThree.value!='#'){
+          e.target.submit()
+        }else{
+          span.innerText = "Select any one option"
+        }
+      });
+    </script>
+    <% } %>
+  </body>
+</html>

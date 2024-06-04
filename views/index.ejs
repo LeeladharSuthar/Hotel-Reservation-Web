@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/public/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/home.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Aqua Beach Resort Cancún</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script
+      src="https://kit.fontawesome.com/26125200c4.js"
+      crossorigin="anonymous"
+    ></script>
+    
+      </style>
+    <script src="./index.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/" class="logo">Live Aqua Beach Resort</a>
+      <div>
+        <ul>
+          <li><a href="/" style="border-bottom: 2px solid white">Home</a></li>
+          <li><a href="/reservations" >Resevations</a></li>
+          <li><a href="/restaurant" >Restaurant</a></li>
+        </ul>
+      </div>
+      <% if (data && data?._id) { %>
+      <!-- <a href="http://localhost:3000/api/v1/users/logout" class="admin" -->
+        <!-- >Logout</a -->
+      <!-- > -->
+      <div class="user-dropdown">
+        <span class="material-symbols-outlined" style="font-size: 24px;">
+          account_circle
+          </span>
+        <div class="dropdown-content">
+          <a href="/profile">Profile</a>
+          <a href="/myReservations">My Reservations</a>
+          <a href="/myBookings">My Bookings</a>
+          <a href="http://localhost:3000/api/v1/users/logout">Logout</a>
+        </div>
+      </div>
+      <% } else { %>
+      <a href="/login" class="admin">Login/Register</a>
+      <% } %>
+    </header>
+    <div class="main">
+     
+      <div>
+        <p>Welcome to the <br /><span>"Live Aqua Beach Resort"</span></p>
+        <a href="#about"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+      </div>
+    </div>
+    <div class="about" id="about">
+      <div class="abt-img">
+        <img src="/assets/img-2.jpg" alt="" />
+      </div>
+      <div class="abt-text">
+        <h3>About Live Aqua Beach Resort</h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;Welcome To Live Aqua Beach Resort Cancún! Situated
+          In The Heart Of The Stunning Cancún Coastline, Our Resort Offers An
+          Unparalleled Experience Of Luxury And Relaxation. Immerse Yourself In
+          Our Breathtaking Ocean Views, Indulge In World-Class Amenities, And
+          Savor The Finest Dining Options, Creating Unforgettable Memories
+          During Your Stay.
+        </p>
+      </div>
+    </div>
+    <div class="why">
+      <h3>Why Live Aqua Beach Resort?</h3>
+      <div class="cards-holder">
+        <div class="card">
+          <img src="/assets/img-3.jpg" alt="" />
+          <h4>Oceanfront Bar</h4>
+          <hr />
+          <p>
+            Indulge in our oceanfront bar, perfect for enjoying moments with
+            your partner or friends while overlooking the stunning sea. Listen
+            to live music, dance, and savor our signature drinks, including the
+            classic "Margarita" or the local favorite, Pacific Beer.
+          </p>
+          
+        </div>
+        <div class="card">
+          <img src="/assets/img-4.jpg" alt="" />
+          <h4>Hidden Garden Restaurant</h4>
+          <hr />
+          <p>
+            Experience the Hidden Garden Restaurant with breathtaking sea views,
+            open from 7:00 a.m. to 10:00 p.m. Indulge in a variety of delightful
+            Mexican and international dishes a la carte. Specializing in fine
+            cuts and seafood, we also offer a Sunday buffet and daily room
+            service until 9:30 p.m.
+          </p>
+          
+        </div>
+        <div class="card">
+          <img src="/assets/img-5.jpg" alt="" />
+          <h4>Amenities</h4>
+          <hr />
+          <p>
+            Enjoy our resort amenities, including two swimming pools with
+            waterfalls and jacuzzis, wireless internet, 24-hour security, room
+            service, free parking, laundry service ($), sport fishing
+            reservations, doctor ($), babysitting service upon request ($),
+            jewelry store, tobacco shop, event room, and meeting facilities.
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <div class="rooms">
+      <h3>BEDROOMS</h3>
+      <div>
+        <img src="/assets/img-room-1.jpg" alt="" />
+        <div>
+          <h2>PRESIDENTIAL SUITE SOL Y LUNA</h2>
+          <h3>Maximum Capacity: 4</h3>
+          <h4>Features:</h4>
+          <ul>
+            <li>King Size Bed</li>
+            <li>Space: 330.00 Square Meters</li>
+            <li>
+              Privileged View Of The Nichupté Lagoon And The Caribbean Sea
+            </li>
+            <li>Independent Living Room With A Bar</li>
+            <li>Jacuzzi With Ocean Views And Separate Shower</li>
+            <li>Two 65-Inch TVs And Access To The Aqua Club Lounge</li>
+            <li>Butler Service</li>
+            <li>Molton Brown Amenities And Nespresso In-Room</li>
+            <li>High Tech Details For Entertainment And Comfort</li>
+            <li>400-Thread-Count Sheets And Pillow Menu</li>
+          </ul>
+          <p>
+            The Presidential Suite Sol Y Luna epitomizes luxury and exclusivity.
+            It offers a spacious, luxurious area with a privileged view.
+            Equipped with the latest amenities like a jacuzzi, separate living
+            room, and exclusive access to the Aqua Club Lounge, it provides a
+            relaxing and delightful experience during the resort stay.
+          </p>
+        </div>
+      </div>
+      <div>
+        <img src="/assets/img-room-2.jpg" alt="" />
+        <div>
+          <h2>FUEGO SUITE</h2>
+          <h3>Maximum Capacity: 3</h3>
+          <h4>Features:</h4>
+          <ul>
+            <li>King Size Bed</li>
+            <li>Space: 73.60 Square Meters</li>
+            <li>
+              Private Balcony With Stunning Views Of The Nichupté Lagoon And The
+              Caribbean Sea
+            </li>
+            <li>Jacuzzi With Hydrotherapy And Chromotherapy</li>
+            <li>Access To The Aqua Club Lounge</li>
+            <li>Butler Service And Molton Brown Amenities</li>
+            <li>65-Inch Smart TVs And Entertainment Options</li>
+            <li>High-Tech Details For Comfort And Relaxation</li>
+          </ul>
+          <p>
+            The Fuego Suite embodies passion, vitality, and energy. It offers a
+            complete ritual of relaxation with a hydrotherapy and chromotherapy
+            jacuzzi and a private balcony boasting privileged views. Access to
+            the Aqua Club Lounge enhances the experience, coupled with the
+            attentive Butler service and amenities for a delightful stay at this
+            resort.
+          </p>
+        </div>
+      </div>
+      <div>
+        <img src="/assets/img-room-3.jpg" alt="" />
+        <div>
+          <h2>HONEYMOON SUITE</h2>
+          <h3>Maximum Capacity: 3</h3>
+          <h4>Features:</h4>
+          <ul>
+            <li>King Size Bed</li>
+            <li>Space: 60.00 Square Meters</li>
+            <li>Access To Aqua Club Lounge</li>
+            <li>Butler Service For Personalized Experiences</li>
+            <li>
+              Bali Beds In The Pool, Special Celebrations, Dinners, And Wines
+            </li>
+            <li>High-Tech Details And Molton Brown Amenities</li>
+            <li>Smart TVs For Entertainment</li>
+          </ul>
+          <p>
+            The Honeymoon Suite is an intense celebration of love and romance,
+            engaging all senses with aromas, flavors, colors, sounds, and subtle
+            sensations. Exclusive access to the Aqua Club Lounge, coupled with
+            the attentive Butler service, adds to the enchantment, organizing
+            special moments and fulfilling personalized desires during your stay
+            at this resort.
+          </p>
+        </div>
+      </div>
+      <div>
+        <img src="/assets/img-room-4.jpg" alt="" />
+        <div>
+          <h2>PREMIUM OCEAN FRONT WITH TERRACE 2 DOUBLE</h2>
+          <h3>Maximum Capacity: 3</h3>
+          <h4>Features:</h4>
+          <ul>
+            <li>Double Beds</li>
+            <li>Space: 43.80 Square Meters</li>
+            <li>Premium Ocean View</li>
+            <li>Smart Lighting And Aroma Menu</li>
+            <li>Luxury Amenities Including Molton Brown</li>
+            <li>400-Thread-Count Sheets For Ultimate Comfort</li>
+            <li>Nespresso Coffee Maker And Two 65” SMART TVs</li>
+            <li>Electrically Controlled Curtains</li>
+          </ul>
+          <p>
+            The Premium Ocean Front With Terrace 2 Double offers a unique
+            sensory experience. Smart console controls allow for personalized
+            lighting and aromatherapy, enhancing your environment. Enjoy luxury
+            amenities, including plush robes and slippers, Molton Brown
+            amenities, and 400-thread-count sheets. Revel in the stunning ocean
+            view from the expansive balcony, perfect for inspiration and
+            relaxation.
+          </p>
+        </div>
+      </div>
+      <div>
+        <img src="/assets/img-room-5.jpg" alt="" />
+        <div>
+          <h2>PREMIUM GARDEN VIEW 1 KING</h2>
+          <h3>Maximum Capacity: 2</h3>
+          <p>
+            Customize your room's ambiance with details that adapt to your mood.
+            Select perfect lighting, choose an aroma from the aromatherapy menu
+            for comfort, and decide on music to accompany your moments.
+            Luxuriate in the lavish bath and feel the softness of the robe and
+            slippers against your skin. Admire your surroundings, like the
+            handcrafted headboard designed to reconnect you with nature. Rest on
+            incredible feather beds. Explore the pillow menu and select the best
+            for you. Indulge in our Molton Brown amenities and experience true
+            luxury with 400-thread-count sheets. This room also features a
+            minibar, Nespresso coffee maker, two SMART TVs, electrically
+            controlled curtains, and a spectacular view that's part of this
+            fabulous experience.
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-one">
+        <h3>Live Aqua Beach Resort</h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;Live Aqua Beach Resort is a luxurious hotel located
+          in Cancun, known for its exquisite amenities and stunning oceanfront
+          views. The resort offers an array of facilities, including multiple
+          pools, spa services, fine dining restaurants, and exclusive lounges,
+          ensuring an unforgettable experience for its guests.
+        </p>
+      </div>
+      <div class="footer-two">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="/reservations">Reservations</a></li>
+          <li><a href="/restaurant">Restaurants</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-three">
+        <h3>Contact</h3>
+        <ul>
+          <li>
+            Blvd. Kukulcan KM. 12.5, Zona Hotelera, 77500 Cancún, Q.R., Mexico
+          </li>
+          <li>info@liveaquacancun.com</li>
+          <li>+52 (998) 123 4567</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

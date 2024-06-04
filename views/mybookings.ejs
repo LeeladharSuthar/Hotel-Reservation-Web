@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Bookings</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <script
+      src="https://kit.fontawesome.com/26125200c4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/path/to/your/css/styles.css" />
+    <!-- Adjust the path as necessary -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+      }
+      .main{
+        background-image: url('/assets/gallery-6.jpg');
+        display: flex;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+      }
+      .main > h1{
+        color: white;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+      }
+
+      header a.logo {
+        color: white;
+        text-decoration: none;
+        font-size: 1.5em;
+      }
+
+      header ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      header ul li {
+        margin: 0 10px;
+      }
+
+      header ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 5px 10px;
+      }
+
+      header ul li a:hover {
+        border-bottom: 2px solid white;
+      }
+
+      .user-dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .material-symbols-outlined {
+        font-size: 40px; /* Adjust the size of the icon */
+        cursor: pointer;
+        color: white;
+        padding: 10px 20px;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+
+      .user-dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .admin {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        background-color: #007bff;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .admin:hover {
+        background-color: #0056b3;
+      }
+
+      a {
+        text-decoration: none;
+      }
+      .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        padding: 20px;
+        width: 100%;
+      }
+      .card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        padding: 16px;
+        width: 70vw; /* 70% of the viewport width */
+        max-width: 900px; /* Ensures the card doesn't get too wide */
+        box-sizing: border-box;
+      }
+      .card h2 {
+        margin-top: 0;
+        font-size: 1.5em;
+        color: #333;
+      }
+      .card p {
+        margin: 5px 0;
+        color: #666;
+      }
+
+      footer {
+        background-color: #2a3f5f;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 50vh;
+        justify-content: space-evenly;
+      }
+      .footer-one {
+        width: 30%;
+        font-size: 20px;
+      }
+      .footer-two {
+        width: 15%;
+        font-size: 20px;
+      }
+      .footer-three {
+        width: 40%;
+        font-size: 20px;
+      }
+      .footer-one > h3,
+      .footer-two > h3,
+      .footer-three > h3 {
+        color: wheat;
+        border-bottom: 2px solid white;
+        margin-bottom: 5px;
+      }
+      .footer-one > p {
+        color: wheat;
+        text-align: justify;
+      }
+      .footer-two > ul > li,
+      .footer-three > ul > li {
+        color: wheat;
+        margin-bottom: 5px;
+        list-style-type: square;
+      }
+      .footer-two > ul > li > a {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo">Live Aqua Beach Resort</a>
+      <div>
+        <ul>
+          <li><a href="/" >Home</a></li>
+          <li><a href="/reservations">Resevations</a></li>
+          <li><a href="/restaurant">Restaurant</a></li>
+        </ul>
+      </div>
+      <% if (data && data?._id) { %>
+        <!-- <a href="http://localhost:3000/api/v1/users/logout" class="admin" -->
+          <!-- >Logout</a -->
+        <!-- > -->
+        <div class="user-dropdown">
+          <span class="material-symbols-outlined" style="font-size: 24px;">
+            account_circle
+            </span>
+          <div class="dropdown-content">
+            <a href="/profile">Profile</a>
+            <a href="/myReservations">My Reservations</a>
+            <a href="/myBookings">My Bookings</a>
+            <a href="http://localhost:3000/api/v1/users/logout">Logout</a>
+          </div>
+        </div>
+        <% } else { %>
+        <a href="/login" class="admin">Login/Register</a>
+        <% } %>
+    </header>
+    <div class="main">
+      <h1 style="width: 100%; text-align: center">Your Bookings</h1>
+
+      <% if (dataOne.length > 0) { %>
+      <div class="card-container">
+        <% dataOne.forEach(booking => { %>
+        <div class="card">
+          <h2><%= booking.name %></h2>
+          <p><strong>Main Course:</strong> <%= booking.mainCourse %></p>
+          <p><strong>Drink:</strong> <%= booking.drink %></p>
+          <p><strong>Side:</strong> <%= booking.side %></p>
+          <p><strong>Amount:</strong> $<%= booking.amount %></p>
+          <p>
+            <strong>Date:</strong> <%= new
+            Date(booking.createdAt).toLocaleDateString() %>
+          </p>
+        </div>
+        <% }) %>
+      </div>
+      <% } else { %>
+      <p style="width: 100%; text-align: center; color: white; font-weight: 800;">No bookings found.</p>
+      <% } %>
+    </div>
+    <footer>
+      <div class="footer-one">
+        <h3>Live Aqua Beach Resort</h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;Live Aqua Beach Resort is a luxurious hotel located
+          in Cancun, known for its exquisite amenities and stunning oceanfront
+          views. The resort offers an array of facilities, including multiple
+          pools, spa services, fine dining restaurants, and exclusive lounges,
+          ensuring an unforgettable experience for its guests.
+        </p>
+      </div>
+      <div class="footer-two">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="/reservations">Reservations</a></li>
+          <li><a href="/restaurant">Restaurants</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-three">
+        <h3>Contact</h3>
+        <ul>
+          <li>
+            Blvd. Kukulcan KM. 12.5, Zona Hotelera, 77500 Cancún, Q.R., Mexico
+          </li>
+          <li>info@liveaquacancun.com</li>
+          <li>+52 (998) 123 4567</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

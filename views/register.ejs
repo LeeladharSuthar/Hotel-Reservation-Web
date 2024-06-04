@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registration Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-image: url("./assets/img-1.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .form-container {
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+        width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="tel"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+      }
+
+      input[type="file"] {
+        width: 100%;
+        padding: 7px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      .form-div {
+        display: flex;
+        justify-content: space-between;
+      }
+      .form-div > a {
+        text-decoration: none;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+      .form-div > a:hover {
+        background-color: #3e8e41;
+      }
+      .form-container label.error {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>User Registration</h1>
+      <form
+        action="http://localhost:3000/api/v1/users/register"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <label for="username"
+          >Username:<span id="400" style="color: red"></span
+        ></label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          autocomplete="off"
+        /><br /><br />
+
+        <label for="email"
+          >Email:<span id="401" style="color: red"></span
+        ></label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          autocomplete="off"
+        /><br /><br />
+
+        <label for="fullname">Full Name:</label>
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          required
+          autocomplete="off"
+        /><br /><br />
+
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+
+        <label for="phonenumber"
+          >Phone Number:<span id="402" style="color: red"></span
+        ></label>
+        <input
+          type="tel"
+          id="phonenumber"
+          name="phone"
+          pattern="[0-9]{10}"
+          required
+          autocomplete="off"
+        /><br /><br />
+
+        <label for="avatar">Avatar (Image):</label>
+        <input
+          type="file"
+          id="avatar"
+          name="avatar"
+          accept="image/*"
+        /><br /><br />
+
+        <div class="form-div">
+          <input type="submit" value="Register" />
+          <a href="./login.html">Login</a>
+        </div>
+      </form>
+    </div>
+    <script>
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // console.log(e);
+        const spanOne = document.getElementById("400");
+        const spanTwo = document.getElementById("401");
+        const spanThree = document.getElementById("402");
+
+        spanOne.innerText = "";
+        spanTwo.innerText = "";
+        spanThree.innerText = "";
+
+        const url = "http://localhost:3000/api/v1/users/verifyRegister";
+        const method = "POST";
+        const data = {
+          email: document.getElementById("email").value,
+          phone: document.getElementById("phonenumber").value,
+          username: document.getElementById("username").value,
+        };
+        const headers = {
+          "Content-Type": "application/json", // Adjust based on body format (text, form-data, etc.)
+        };
+
+        const body = JSON.stringify(data);
+
+        fetch(url, {
+          method: method,
+          body: body,
+          headers: headers,
+        })
+          .then((response) => response.json()) // Process the response (example: parse JSON)
+          .then((data) => {
+            const code = data.code;
+            if (code == 401) {
+              spanOne.innerText = data.message;
+            } else if (code == 400) {
+              spanTwo.innerText = data.message;
+            } else if (code == 402) {
+              spanThree.innerText = data.message
+            } else if(code == 200){
+              e.target.submit()
+            } else {
+              alert("Something went wrong")
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      });
+    </script>
+  </body>
+</html>

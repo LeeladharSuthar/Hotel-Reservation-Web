@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Error</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            color: #333;
+        }
+        .error-container {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .error-code {
+            font-size: 72px;
+            font-weight: bold;
+            color: #d9534f;
+        }
+        .error-message {
+            font-size: 24px;
+            margin: 1rem 0;
+        }
+        .error-description {
+            font-size: 18px;
+            color: #6c757d;
+        }
+        .back-home {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.75rem 1.5rem;
+            background: #0275d8;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .back-home:hover {
+            background: #025aa5;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">500</div>
+        <div class="error-message">Internal Server Error</div>
+        <div class="error-description">Sorry, something went wrong on our end. Please try again later.</div>
+        <a href="/" class="back-home">Go Back Home</a>
+    </div>
+</body>
+</html>

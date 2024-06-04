@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: black;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+header a.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header ul li {
+  margin: 0 10px;
+}
+
+header ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+header ul li a:hover {
+  border-bottom: 2px solid white;
+}
+
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.material-symbols-outlined {
+  font-size: 40px; /* Adjust the size of the icon */
+  cursor: pointer;
+  color: white;
+  padding: 10px 20px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.user-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.admin {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.admin:hover {
+  background-color: #0056b3;
+}
+
+
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+footer {
+  background-color: #2a3f5f;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 50vh;
+  justify-content: space-evenly;
+}
+.footer-one {
+  width: 30%;
+  font-size: 20px;
+}
+.footer-two {
+  width: 15%;
+  font-size: 20px;
+}
+.footer-three {
+  width: 40%;
+  font-size: 20px;
+}
+.footer-one > h3,
+.footer-two > h3,
+.footer-three > h3 {
+  color: wheat;
+  border-bottom: 2px solid white;
+  margin-bottom: 5px;
+}
+.footer-one > p {
+  color: wheat;
+  text-align: justify;
+}
+.footer-two > ul > li,
+.footer-three > ul > li {
+  color: wheat;
+  margin-bottom: 5px;
+  list-style-type: square;
+}
+
+.footer-two > ul > li > a {
+  color: white;
+}
+.main {
+  height: 130vh;
+  padding-top: 10vh;
+  background-image: url("/assets/img-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main > div {
+  background-image: linear-gradient(-45deg, #3b5998 50%, #2a3f5f 50%);
+  width: 80%;
+  height: 85%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.main > div > img {
+  height: 90%;
+  border-radius: 10px;
+  width: 30%;
+}
+.main > div > div {
+  width: 60%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  height: 30px;
+  border: 0;
+  border-radius: 6px;
+  padding-left: 3px;
+}
+.arrival-departure {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.arrival-departure > div {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+label {
+  margin-bottom: 12px;
+  color: #d4e2ef;
+  font-size: 18px;
+  font-weight: 800;
+}
+form > h3 {
+  color: #d4e2ef;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+form > p {
+  color: #d4e2ef;
+  margin-bottom: 18px;
+  font-size: 18px;
+}
+.drop {
+  border-radius: 6px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  margin-bottom: 18px;
+  align-items: center;
+  height: 30px;
+  padding-left: 10px;
+}
+.drop > select {
+  width: 80%;
+  border: 0px;
+  height: 100%;
+  border-left: 1px solid gray;
+}
+.drop > label {
+  color: black;
+  padding-top: 10px;
+  font-size: 14px;
+
+}
+
+form > button {
+    width: 40%;
+    background-color: #d4e2ef;
+    height: 30px;
+    border-radius: 6px;
+    border: 0px;
+    font-size: 20px;
+    color: #2a3f5f;
+  }
+  form > button:hover {
+    background-color: #99acbe;
+    border: 2px solid #2a3f5f;
+  }

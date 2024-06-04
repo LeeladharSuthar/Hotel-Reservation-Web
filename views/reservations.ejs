@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservations</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <script
+      src="https://kit.fontawesome.com/26125200c4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/styles/reservations.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo">Live Aqua Beach Resort</a>
+      <div>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li>
+            <a href="#" style="border-bottom: 2px solid white">Resevations</a>
+          </li>
+          <li><a href="/restaurant">Restaurant</a></li>
+        </ul>
+      </div>
+      <% if (data && data?._id) { %>
+        <!-- <a href="http://localhost:3000/api/v1/users/logout" class="admin" -->
+          <!-- >Logout</a -->
+        <!-- > -->
+        <div class="user-dropdown">
+          <span class="material-symbols-outlined" style="font-size: 24px;">
+            account_circle
+            </span>
+          <div class="dropdown-content">
+            <a href="/profile">Profile</a>
+            <a href="/myReservations">My Reservations</a>
+            <a href="/myBookings">My Bookings</a>
+            <a href="http://localhost:3000/api/v1/users/logout">Logout</a>
+          </div>
+        </div>
+        <% } else { %>
+        <a href="/login" class="admin">Login/Register</a>
+        <% } %>
+    </header>
+    <div class="main">
+      <div>
+        <img src="./assets/img-1-bg.jpg" alt="" />
+        <div>
+          <% if(data && data.email) { %>
+          <form
+            action="http://localhost:3000/api/v1/reservation/makeReservation"
+            method="post"
+          >
+            <h3>Reservations at Live Aqua</h3>
+            <p>
+              We'll reach out to confirm your booking and make your Live Aqua
+              experience unforgettable.
+            </p>
+            <label for="name">Full Name:</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="Your Full Name"
+            />
+            <br />
+            <label for="mail">Email Address:</label>
+            <input
+              type="email"
+              name="mail"
+              required
+              id="mail"
+              placeholder="yourname@example.com"
+            />
+            <br />
+            <label for="guests">Number of Guests:</label>
+            <input
+              type="number"
+              name="guests"
+              required
+              id="guests"
+              placeholder="Number of Guests"
+            />
+            <div class="arrival-departure">
+              <div class="arrival">
+                <label for="arrival">Arrival Date:</label>
+                <input
+                  type="date"
+                  required
+                  name="arrival"
+                  id="arrival"
+                />
+              </div>
+              <div class="departure">
+                <label for="departure">Departure Date:</label>
+                <input type="date" name="departure" required id="departure" />
+              </div>
+            </div>
+            <span id="span" style="color: red"></span>
+            <div class="drop">
+              <label for="room">Preferred Room</label>
+              <select name="room" id="room" required>
+                <option value="#" disabled selected>Select one</option>
+                <option value="single">Single Room</option>
+                <option value="duplex">Delux Room</option>
+              </select>
+            </div>
+
+            <button type="submit">MAKE RESERVATION</button>
+          </form>
+          <% } else { %>
+          <form action="/login" method="get">
+            <h3>Reservations at Live Aqua</h3>
+            <p>
+              We'll reach out to confirm your booking and make your Live Aqua
+              experience unforgettable.
+            </p>
+            <label for="name">Full Name:</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              disabled
+              placeholder="Your Full Name"
+            />
+            <br />
+            <label for="mail">Email Address:</label>
+            <input
+              type="email"
+              name="mail"
+              disabled
+              id="mail"
+              placeholder="yourname@example.com"
+            />
+            <br />
+            <label for="guests">Number of Guests:</label>
+            <input
+              type="number"
+              disabled
+              name="guests"
+              id="guests"
+              placeholder="Number of Guests"
+            />
+            <div class="arrival-departure">
+              <div class="arrival">
+                <label for="arrival">Arrival Date:</label>
+                <input type="date" name="arrival" id="arrival" disabled />
+              </div>
+              <div class="departure">
+                <label for="departure">Departure Date:</label>
+                <input type="date" name="departure" id="departure" disabled />
+              </div>
+            </div>
+            <span id="span" style="color: red"></span>
+            <div class="drop">
+              <label for="room">Preferred Room</label>
+              <select name="room" id="room" disabled>
+                <option value="#" disabled selected>Select one</option>
+                <option value="single">Single Room</option>
+                <option value="duplex">Delux Room</option>
+              </select>
+            </div>
+
+            <button type="submit">Login/Register</button>
+          </form>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-one">
+        <h3>Live Aqua Beach Resort</h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;Live Aqua Beach Resort is a luxurious hotel located
+          in Cancun, known for its exquisite amenities and stunning oceanfront
+          views. The resort offers an array of facilities, including multiple
+          pools, spa services, fine dining restaurants, and exclusive lounges,
+          ensuring an unforgettable experience for its guests.
+        </p>
+      </div>
+      <div class="footer-two">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#">Reservations</a></li>
+          <li><a href="/restaurant">Restaurants</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-three">
+        <h3>Contact</h3>
+        <ul>
+          <li>
+            Blvd. Kukulcan KM. 12.5, Zona Hotelera, 77500 Cancún, Q.R., Mexico
+          </li>
+          <li>info@liveaquacancun.com</li>
+          <li>+52 (998) 123 4567</li>
+        </ul>
+      </div>
+    </footer>
+    <% if(data && data._id) { %>
+    <script>
+      const room = document.querySelector("#room");
+      const span = document.querySelector("#span");
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        span.innerText = "";
+        if (room.value == "#") {
+          span.innerText = "Please select any one option";
+        } else {
+          e.target.submit();
+        }
+      });
+
+      function getMaxDateInThreeMonths(mon) {
+        const today = new Date();
+        today.setMonth(today.getMonth() + mon); // Add 3 months to current month
+        // Adjust for edge cases where the new month might have fewer days than the current day
+        today.setDate(Math.min(today.getDate(), 31)); // Set date to the last day of the new month (max 31)
+        return today.toISOString().split("T")[0]; // Return YYYY-MM-DD format
+      }
+
+      const arrival = document.getElementById("arrival");
+      const departure = document.getElementById("departure");
+      
+      arrival.min = getMaxDateInThreeMonths(0);
+      arrival.max = getMaxDateInThreeMonths(3);
+      departure.min = getMaxDateInThreeMonths(0)
+      departure.max = getMaxDateInThreeMonths(3)
+    </script>
+    <% } %>
+  </body>
+</html>
